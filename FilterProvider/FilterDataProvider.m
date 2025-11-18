@@ -8,11 +8,14 @@
 #import "AppProxyProvider.h"
 
 @implementation FilterDataProvider
-
+- (void)startFilterWithCompletionHandler:(void (^)(NSError * __nullable error))completionHandler API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos){
+    completionHandler(nil);
+}
 
 - (NEFilterNewFlowVerdict *) handleNewFlow:(NEFilterFlow *) flow{
     //peekInboundBytes:用于控制 Network Extension 系统在调用 handleInboundDataFromFlow: 之前，最多缓存并传递多少字节的入站数据,后续数据仍会继续通过 handleInboundDataFromFlow: 分块传递
-    return [NEFilterNewFlowVerdict filterDataVerdictWithFilterInbound:YES peekInboundBytes:64 filterOutbound:NO peekOutboundBytes:0];
+    NSLog(@"[%s] check the flow",__FUNCTION__);
+    return [NEFilterNewFlowVerdict allowVerdict];
 }
 
 //主App调用loadFromPreferences，扩展APP自动调用该方法传给主APP配置
