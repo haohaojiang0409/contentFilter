@@ -5,13 +5,36 @@
 //  Created by haohaojiang0409 on 2025/11/18.
 //
 
-#import "AppProxyProvider.h"
+#import "FilterDataProvider.h"
 
 @implementation FilterDataProvider
-- (void)startFilterWithCompletionHandler:(void (^)(NSError * __nullable error))completionHandler API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos){
-    completionHandler(nil);
-}
+- (void)startFilterWithCompletionHandler:(void (^)(NSError * __nullable error))completionHandler{
+    NSLog(@"[FilterDataProvider] start success");
+    //1.1网络规则类
+    NENetworkRule* networkRule = nil;
+    //1.2过滤数据包规则类
+    NEFilterRule* filterRule = nil;
+    //1.3过滤设定类
+    NEFilterSettings* filterSettings = nil;
+    
+    networkRule = [[NENetworkRule alloc] initWithRemoteNetworkEndpoint:nil remotePrefix:0 localNetworkEndpoint:nil localPrefix:0 protocol:NENetworkRuleProtocolAny direction:NETrafficDirectionAny];
+    filterRule = [[NEFilterRule alloc] initWithNetworkRule:networkRule action:NEFilterActionFilterData];
+    filterSettings = [[NEFilterSettings alloc] initWithRules:@[filterRule] defaultAction:NEFilterActionAllow];
 
+    [self applySettings:filterSettings completionHandler:^(NSError * _Nullable error) {
+        if (error != nil) {
+            //os_log_error(logHandle, "ERROR: Failed to apply filter settings: %@", error.localizedDescription);
+            NSLog(@"Failed to apply filter setttings");
+        }
+
+        completionHandler(error);
+    }];
+}
+- (void)stopFilterWithReason:(NEProviderStopReason)reason
+           completionHandler:(void (^)(void))completionHandler{
+    completionHandler();
+    return;
+}
 - (NEFilterNewFlowVerdict *) handleNewFlow:(NEFilterFlow *) flow{
     //peekInboundBytes:用于控制 Network Extension 系统在调用 handleInboundDataFromFlow: 之前，最多缓存并传递多少字节的入站数据,后续数据仍会继续通过 handleInboundDataFromFlow: 分块传递
     NSLog(@"[%s] check the flow",__FUNCTION__);

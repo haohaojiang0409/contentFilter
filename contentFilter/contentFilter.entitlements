@@ -6,6 +6,8 @@
 	<array>
 		<string>content-filter-provider</string>
 	</array>
+	<key>com.apple.developer.system-extension.install</key>
+	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.K67X2X527B.group.com.eagleyun.sdk</string>

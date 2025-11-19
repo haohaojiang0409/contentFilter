@@ -8,11 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		44E19D8D2ECC1DAE00238700 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E19D8C2ECC1DAE00238700 /* NetworkExtension.framework */; };
-		44E19D962ECC1DAE00238700 /* FilterProvider.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 44E19D8A2ECC1DAE00238700 /* FilterProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		44E19DBB2ECCA06400238700 /* FilterProvider.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 44E19D8A2ECC1DAE00238700 /* FilterProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		44E19D942ECC1DAE00238700 /* PBXContainerItemProxy */ = {
+		44E19DB92ECCA05F00238700 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E19D692ECC1D7700238700 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E19D892ECC1DAE00238700;
+			remoteInfo = FilterProvider;
+		};
+		44E19DBC2ECCA06400238700 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E19D692ECC1D7700238700 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E19D892ECC1DAE00238700;
+			remoteInfo = FilterProvider;
+		};
+		44E19DBF2ECCA06800238700 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E19D692ECC1D7700238700 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E19D892ECC1DAE00238700;
+			remoteInfo = FilterProvider;
+		};
+		44E19DC12ECCA07100238700 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 44E19D692ECC1D7700238700 /* Project object */;
 			proxyType = 1;
@@ -22,13 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		44E19D9B2ECC1DAE00238700 /* Embed Foundation Extensions */ = {
+		44E19DBE2ECCA06400238700 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				44E19D962ECC1DAE00238700 /* FilterProvider.appex in Embed Foundation Extensions */,
+				44E19DBB2ECCA06400238700 /* FilterProvider.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,12 +144,15 @@
 				44E19D6D2ECC1D7700238700 /* Sources */,
 				44E19D6E2ECC1D7700238700 /* Frameworks */,
 				44E19D6F2ECC1D7700238700 /* Resources */,
-				44E19D9B2ECC1DAE00238700 /* Embed Foundation Extensions */,
+				44E19DBE2ECCA06400238700 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				44E19D952ECC1DAE00238700 /* PBXTargetDependency */,
+				44E19DBA2ECCA05F00238700 /* PBXTargetDependency */,
+				44E19DBD2ECCA06400238700 /* PBXTargetDependency */,
+				44E19DC02ECCA06800238700 /* PBXTargetDependency */,
+				44E19DC22ECCA07100238700 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				44E19D732ECC1D7700238700 /* contentFilter */,
@@ -234,10 +258,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		44E19D952ECC1DAE00238700 /* PBXTargetDependency */ = {
+		44E19DBA2ECCA05F00238700 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 44E19D892ECC1DAE00238700 /* FilterProvider */;
-			targetProxy = 44E19D942ECC1DAE00238700 /* PBXContainerItemProxy */;
+			targetProxy = 44E19DB92ECCA05F00238700 /* PBXContainerItemProxy */;
+		};
+		44E19DBD2ECCA06400238700 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E19D892ECC1DAE00238700 /* FilterProvider */;
+			targetProxy = 44E19DBC2ECCA06400238700 /* PBXContainerItemProxy */;
+		};
+		44E19DC02ECCA06800238700 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E19D892ECC1DAE00238700 /* FilterProvider */;
+			targetProxy = 44E19DBF2ECCA06800238700 /* PBXContainerItemProxy */;
+		};
+		44E19DC22ECCA07100238700 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E19D892ECC1DAE00238700 /* FilterProvider */;
+			targetProxy = 44E19DC12ECCA07100238700 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
